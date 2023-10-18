@@ -1,0 +1,116 @@
+/* Global */
+.button {
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all ease-in-out 0.05s;
+}
+
+.button:hover {
+  color: #333;
+  background-color: #eee;
+  transition: all ease-in-out 0.2s;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  padding: 0 20px;
+  text-align: left;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Beer List*/
+.beer-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin: 20px 0 30px;
+}
+
+.beer-list__item {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex: 1 0 calc(16.66% - 20px);
+  align-content: space-between;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.05);
+}
+
+.beer-list__item p,
+.beer-list__item a {
+  width: 100%;
+}
+
+.beer-list__item img {
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.beer-list__item.beer-list__item--detail {
+  box-shadow: none;
+  border: none;
+}
+
+.beer-list__item.beer-list__item--detail img {
+  max-height: 600px;
+}
+
+.beer-list__item-details {
+  margin-left: 30px;
+  max-width: 50%;
+  text-align: left;
+}
+
+.beer-list__item-details h2 {
+  border-bottom: 5px solid #333;
+  margin: 0;
+}
+
+.beer-list__item-details__text,
+.beer-list__item-details__stats {
+  margin-top: 30px;
+}
+
+.beer-list__item-details__stats {
+  border: 1px solid #ccc;
+  padding: 0 20px;
+  background: #eee;
+  border-radius: 5px;
+}
+
+.beer-list__item-details__stats p {
+  margin: 0;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1024px) {
+  .beer-list__item {
+    flex: 1 0 calc(25% - 20px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .beer-list__item {
+    flex: 1 0 calc(50% - 20px);
+  }
+
+  .beer-list__item--detail {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}

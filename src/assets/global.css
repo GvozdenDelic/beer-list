@@ -69,6 +69,12 @@
   right: 5px;
   font-size: 12px;
   cursor: pointer;
+  opacity: 0.6;
+  transition: all ease-in-out 0.2s;
+}
+
+.beer-list__item .favorite__icon:hover {
+  opacity: 1;
 }
 
 /* Beer List Detail */

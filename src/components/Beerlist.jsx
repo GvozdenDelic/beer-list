@@ -5,16 +5,17 @@ import Loader from "./Loader";
 
 export default function Beerlist({ beers, setBeers }) {
   const [isLoading, setIsLoading] = useState(true);
-  let favoriteListStorage =
-    window.localStorage.getItem("favoriteList").length > 0
-      ? window.localStorage
-          .getItem("favoriteList")
-          .split(",")
-          .map(function (x) {
-            return parseInt(x, 10);
-          })
-      : [];
-  const [favoriteList, setFavoriteList] = useState(favoriteListStorage);
+  const [favoriteList, setFavoriteList] = useState([]);
+  useEffect(() => {
+    const favoriteListStorage = window.localStorage
+      .getItem("favoriteList")
+      .split(",")
+      .map(function (x) {
+        return parseInt(x, 10);
+      });
+
+    setFavoriteList(favoriteListStorage);
+  }, [favoriteList]);
 
   useEffect(() => {
     const getData = async () => {

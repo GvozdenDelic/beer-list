@@ -5,6 +5,16 @@ import Loader from "./Loader";
 
 export default function Beerlist({ beers, setBeers }) {
   const [isLoading, setIsLoading] = useState(true);
+  let favoriteListStorage =
+    window.localStorage.getItem("favoriteList").length > 0
+      ? window.localStorage
+          .getItem("favoriteList")
+          .split(",")
+          .map(function (x) {
+            return parseInt(x, 10);
+          })
+      : [];
+  const [favoriteList, setFavoriteList] = useState(favoriteListStorage);
 
   useEffect(() => {
     const getData = async () => {
@@ -30,6 +40,8 @@ export default function Beerlist({ beers, setBeers }) {
                 id={beer.id}
                 title={beer.name}
                 posterURL={beer.image_url}
+                favoriteList={favoriteList}
+                setFavoriteList={setFavoriteList}
               />
             );
           })}
@@ -41,5 +53,7 @@ export default function Beerlist({ beers, setBeers }) {
 
 Beerlist.propTypes = {
   beers: PropTypes.array,
-  setBeers: PropTypes.function,
+  setBeers: PropTypes.func,
+  favoriteList: PropTypes.array,
+  setFavoriteList: PropTypes.func,
 };

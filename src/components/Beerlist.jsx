@@ -6,16 +6,6 @@ import Loader from "./Loader";
 export default function Beerlist({ beers, setBeers }) {
   const [isLoading, setIsLoading] = useState(true);
   const [favoriteList, setFavoriteList] = useState([]);
-  useEffect(() => {
-    const favoriteListStorage = window.localStorage
-      .getItem("favoriteList")
-      .split(",")
-      .map(function (x) {
-        return parseInt(x, 10);
-      });
-
-    setFavoriteList(favoriteListStorage);
-  }, [favoriteList]);
 
   useEffect(() => {
     const getData = async () => {

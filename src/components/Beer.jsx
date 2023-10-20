@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 function Beer({ id, title, posterURL, favoriteList, setFavoriteList }) {
   function handleAddToFavorite() {
@@ -10,17 +9,6 @@ function Beer({ id, title, posterURL, favoriteList, setFavoriteList }) {
       setFavoriteList([...favoriteList, id]);
     }
   }
-
-  useEffect(() => {
-    if (favoriteList.includes(id)) {
-      window.localStorage.setItem(
-        "favoriteList",
-        favoriteList.filter((favoriteid) => favoriteid !== id)
-      );
-    } else {
-      window.localStorage.setItem("favoriteList", [...favoriteList, id]);
-    }
-  }, [id, favoriteList]);
 
   return (
     <div className="beer-list__item">

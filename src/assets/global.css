@@ -18,12 +18,20 @@
 /* Header */
 .site-header {
   position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   top: 0;
   z-index: 10;
   padding: 0 20px;
   text-align: left;
   background: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.favorites__icon {
+  font-size: 10px;
+  font-weight: bold;
 }
 
 /* Beer List*/
@@ -104,16 +112,55 @@
   margin-top: 30px;
 }
 
-.beer-list__item-details__stats {
-  border: 1px solid #ccc;
-  padding: 0 20px;
-  background: #eee;
-  border-radius: 5px;
-}
-
 .beer-list__item-details__stats p {
   margin: 0;
   font-weight: bold;
+}
+
+.loading-animation {
+  opacity: 0;
+  transition: opacity 0.3s ease-out 0.2s;
+}
+
+.loading-animation.loading-animation--loaded {
+  opacity: 1;
+}
+
+/* pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li a {
+  color: #333;
+  border: 1px solid #ccc;
+  border-right: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all ease-in-out 0.05s;
+  cursor: pointer;
+}
+
+.pagination li.selected a,
+.pagination li:not(.disabled):hover a {
+  background-color: #eee;
+}
+
+.pagination li.disabled a {
+  color: rgba(51, 51, 51, 0.3);
+}
+
+.pagination li:first-of-type a {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination li:last-of-type a {
+  border-right: 1px solid #ccc;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 @media only screen and (max-width: 1024px) {

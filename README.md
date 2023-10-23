@@ -8,5 +8,7 @@ Features:
 - User login feature that enables favorite list after logging in.
 - Adding a beer to favorite list on the listing page and displaying favorites count in the header
 - Pagination
+- Beer detail page using React Router
+- Breadcrumbs on beer detail page
 
 More features in the next commit. :)

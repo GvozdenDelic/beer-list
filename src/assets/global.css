@@ -84,9 +84,15 @@
   width: 100%;
 }
 
+.beer-list__item a:hover img {
+  transform: scale(1.05);
+  transition: all 0.25s cubic-bezier(0, -0.49, 0.61, 1.92);
+}
+
 .beer-list__item img {
   max-height: 300px;
   object-fit: contain;
+  transition: all 0.15s ease;
 }
 
 .beer-list__item .favorite__icon {

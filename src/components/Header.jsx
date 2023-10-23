@@ -15,6 +15,7 @@ function Header({ favoriteList, loggedIn, setLoggedIn }) {
   function handleLogin() {
     if (username.length > 2) {
       setLoggedIn(true);
+      setLoggingIn(false);
     } else {
       setValidationError("Username must be at least 3 characters long");
     }
@@ -27,7 +28,7 @@ function Header({ favoriteList, loggedIn, setLoggedIn }) {
       </h1>
 
       <div className="site-header__right">
-        {loggingIn && !loggedIn && (
+        {loggingIn && (
           <>
             <input
               placeholder="Enter your name..."

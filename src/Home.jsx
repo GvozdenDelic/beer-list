@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Beerlist from "./components/Beerlist";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [beers, setBeers] = useState([]);
@@ -21,6 +22,7 @@ export default function App() {
         setFavoriteList={setFavoriteList}
         loggedIn={loggedIn}
       />
+      <Footer />
     </>
   );
 }

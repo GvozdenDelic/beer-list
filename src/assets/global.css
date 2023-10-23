@@ -135,6 +135,12 @@
   max-height: 600px;
 }
 
+.beer-list__item.beer-list__item--detail a {
+  display: inline;
+  padding: 0;
+  height: auto;
+}
+
 .beer-list__item-details {
   margin-left: 30px;
   max-width: 50%;

@@ -6,5 +6,6 @@ It lists 24 beers using PunkAPI, has a beer detail page, preloader and 404 page.
 Features:
 
 - Adding a beer to favorite list on the listing page.
+- Pagination
 
 More features in the next commit. :)

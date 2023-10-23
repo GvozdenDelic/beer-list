@@ -129,6 +129,7 @@
 .beer-list__item.beer-list__item--detail {
   box-shadow: none;
   border: none;
+  min-height: 100vh;
 }
 
 .beer-list__item.beer-list__item--detail img {

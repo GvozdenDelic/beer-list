@@ -1,14 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-function Beer({
-  id,
-  title,
-  posterURL,
-  favoriteList,
-  setFavoriteList,
-  loggedIn,
-}) {
+function Beer({ id, title, posterURL, favoriteList, setFavoriteList }) {
   function handleAddToFavorite() {
     if (favoriteList.includes(id)) {
       setFavoriteList(favoriteList.filter((favoriteid) => favoriteid !== id));
@@ -19,11 +12,9 @@ function Beer({
 
   return (
     <div className="beer-list__item">
-      {loggedIn && (
-        <span className="favorite__icon" onClick={handleAddToFavorite}>
-          {favoriteList.includes(id) ? "🧡" : "🤍"}
-        </span>
-      )}
+      <span className="favorite__icon" onClick={handleAddToFavorite}>
+        {favoriteList.includes(id) ? "🧡" : "🤍"}
+      </span>
       <Link to={`/beer/${id}`}>
         <img src={posterURL} alt={title} />
         <p>{title}</p>
@@ -39,7 +30,6 @@ Beer.propTypes = {
   posterURL: PropTypes.string,
   favoriteList: PropTypes.array,
   setFavoriteList: PropTypes.func,
-  loggedIn: PropTypes.bool,
 };
 
 export default Beer;

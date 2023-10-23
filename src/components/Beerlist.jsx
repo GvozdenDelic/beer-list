@@ -9,7 +9,6 @@ export default function Beerlist({
   setBeers,
   favoriteList,
   setFavoriteList,
-  loggedIn,
 }) {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -49,7 +48,6 @@ export default function Beerlist({
                   posterURL={beer.image_url}
                   favoriteList={favoriteList}
                   setFavoriteList={setFavoriteList}
-                  loggedIn={loggedIn}
                 />
               );
             })}
@@ -75,5 +73,4 @@ Beerlist.propTypes = {
   setBeers: PropTypes.func,
   favoriteList: PropTypes.array,
   setFavoriteList: PropTypes.func,
-  loggedIn: PropTypes.bool,
 };

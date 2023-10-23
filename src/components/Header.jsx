@@ -1,23 +1,66 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useReducer } from "react";
 
-function Header({ favoriteList, loggedIn, setLoggedIn }) {
-  const [loggingIn, setLoggingIn] = useState(false);
-  const [username, setUsername] = useState("");
-  const [validationError, setValidationError] = useState("");
+function Header({ favoriteList }) {
+  const initialState = {
+    username: "",
+    loggingIn: false,
+    loggedIn: false,
+    validationError: "",
+  };
 
-  function handleUsername(e) {
-    setValidationError("");
-    setUsername(e);
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  function reducer(state, action) {
+    switch (action.type) {
+      case "change_name": {
+        return {
+          ...state,
+          username: action.payload,
+          validationError: "",
+        };
+      }
+      case "logging": {
+        return {
+          ...state,
+          loggingIn: true,
+          loggedIn: false,
+        };
+      }
+      case "loggedin": {
+        return {
+          ...state,
+          loggingIn: false,
+          loggedIn: true,
+        };
+      }
+      case "validation_error": {
+        return {
+          ...state,
+          validationError: action.payload,
+        };
+      }
+    }
+    throw Error("Unknown action: " + action.type);
   }
 
-  function handleLogin() {
+  function handleLogging() {
+    dispatch({ type: "logging" });
+  }
+
+  function handleChangeName(e) {
+    dispatch({ type: "change_name", payload: e.target.value });
+  }
+
+  function handleLogin(username) {
     if (username.length > 2) {
-      setLoggedIn(true);
-      setLoggingIn(false);
+      dispatch({ type: "loggedin", username });
     } else {
-      setValidationError("Username must be at least 3 characters long");
+      dispatch({
+        type: "validation_error",
+        payload: "Name must have at least 3 chars",
+      });
     }
   }
 
@@ -28,32 +71,35 @@ function Header({ favoriteList, loggedIn, setLoggedIn }) {
       </h1>
 
       <div className="site-header__right">
-        {loggingIn && (
+        {state.loggingIn && (
           <>
             <input
               placeholder="Enter your name..."
               type="text"
-              onChange={(e) => handleUsername(e.target.value)}
+              onChange={(e) => handleChangeName(e)}
             />
-            <button className="button" onClick={() => handleLogin()}>
+            <button
+              className="button"
+              onClick={() => handleLogin(state.username)}
+            >
               Log in
             </button>
 
-            {validationError !== "" && (
-              <div className="validation-error">{validationError}</div>
+            {state.validationError !== "" && (
+              <div className="validation-error">{state.validationError}</div>
             )}
           </>
         )}
 
-        {!loggingIn && !loggedIn && (
-          <button className="button" onClick={() => setLoggingIn(true)}>
+        {!state.loggingIn && !state.loggedIn && (
+          <button className="button" onClick={handleLogging}>
             Log in
           </button>
         )}
 
-        {loggedIn && `Hi, ${username} !`}
-        {loggedIn && (
-          <div className="favorites__icon">🧡({favoriteList.length})</div>
+        {state.loggedIn && `Hi, ${state.username} !`}
+        {state.loggedIn && (
+          <div className="favorites__icon">🧡({favoriteList})</div>
         )}
       </div>
     </header>
@@ -62,8 +108,6 @@ function Header({ favoriteList, loggedIn, setLoggedIn }) {
 
 Header.propTypes = {
   favoriteList: PropTypes.array,
-  loggedIn: PropTypes.bool,
-  setLoggedIn: PropTypes.func,
 };
 
 export default Header;

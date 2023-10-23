@@ -4,16 +4,22 @@ import Beerlist from "./components/Beerlist";
 
 export default function App() {
   const [beers, setBeers] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [favoriteList, setFavoriteList] = useState([]);
 
   return (
     <>
-      <Header favoriteList={favoriteList} />
+      <Header
+        favoriteList={favoriteList}
+        loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
+      />
       <Beerlist
         beers={beers}
         setBeers={setBeers}
         favoriteList={favoriteList}
         setFavoriteList={setFavoriteList}
+        loggedIn={loggedIn}
       />
     </>
   );

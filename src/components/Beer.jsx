@@ -24,14 +24,10 @@ function Beer({
           {favoriteList.includes(id) ? "🧡" : "🤍"}
         </span>
       )}
-      <aside>
-        <Link to={`/beer/${id}`}>
-          <img src={posterURL} alt={title} />
-        </Link>
-      </aside>
-      <p>{title}</p>
-      <Link to={`/beer/${id}`} className="button">
-        See more
+      <Link to={`/beer/${id}`}>
+        <img src={posterURL} alt={title} />
+        <p>{title}</p>
+        <div className="button">See more</div>
       </Link>
     </div>
   );

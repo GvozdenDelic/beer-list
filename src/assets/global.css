@@ -71,7 +71,7 @@
   flex: 1 0 calc(16.66% - 20px);
   align-content: space-between;
   justify-content: center;
-  padding: 20px;
+  padding: 0;
   box-sizing: border-box;
   border: 1px solid #eee;
   margin: 10px;
@@ -84,9 +84,24 @@
   width: 100%;
 }
 
+.beer-list__item a {
+  height: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 .beer-list__item a:hover img {
   transform: scale(1.05);
   transition: all 0.25s cubic-bezier(0, -0.49, 0.61, 1.92);
+}
+
+.beer-list__item a:hover .button {
+  background-color: #eee;
+  transition: all ease-in-out 0.2s;
 }
 
 .beer-list__item img {

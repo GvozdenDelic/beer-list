@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useReducer } from "react";
+import "./css/header.css";
 
 function Header({ favoriteList }) {
   const initialState = {
@@ -107,7 +108,7 @@ function Header({ favoriteList }) {
 }
 
 Header.propTypes = {
-  favoriteList: PropTypes.array,
+  favoriteList: PropTypes.number,
 };
 
 export default Header;

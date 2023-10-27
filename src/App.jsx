@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./Home";
+import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import Beerdetail from "./components/Beerdetail";
-import "./assets/global.css";
 
 export default function App() {
   return (

@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import Beer from "./Beer";
 import Loader from "./Loader";
 import ReactPaginate from "react-paginate";
+import "./css/beerlist.css";
+import "./css/pagination.css";
 
 export default function Beerlist({
   beers,

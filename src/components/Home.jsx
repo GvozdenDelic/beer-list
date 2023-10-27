@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Header from "./components/Header";
-import Beerlist from "./components/Beerlist";
-import Footer from "./components/Footer";
+import Header from "./Header";
+import Beerlist from "./Beerlist";
+import Footer from "./Footer";
 
 export default function App() {
   const [beers, setBeers] = useState([]);

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export default function NotFound() {
   return (
@@ -9,6 +10,7 @@ export default function NotFound() {
       <Link to="/" className="button">
         Show me the beers
       </Link>
+      <Footer />
     </>
   );
 }

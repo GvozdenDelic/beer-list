@@ -5,7 +5,11 @@ import Footer from "./Footer";
 
 export default function App() {
   const [beers, setBeers] = useState([]);
-  const [favoriteList, setFavoriteList] = useState([]);
+  const [favoriteList, setFavoriteList] = useState(
+    localStorage.getItem("favoriteList")
+      ? JSON.parse(localStorage.getItem("favoriteList"))
+      : []
+  );
 
   return (
     <>

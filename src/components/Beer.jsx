@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Beer({ id, title, posterURL, favoriteList, setFavoriteList }) {
@@ -9,6 +10,12 @@ function Beer({ id, title, posterURL, favoriteList, setFavoriteList }) {
       setFavoriteList([...favoriteList, id]);
     }
   }
+
+  useEffect(() => {
+    if (favoriteList.length > 0) {
+      localStorage.setItem("favoriteList", JSON.stringify(favoriteList));
+    }
+  }, [favoriteList]);
 
   return (
     <div className="beer-list__item">
@@ -28,7 +35,7 @@ Beer.propTypes = {
   id: PropTypes.number,
   title: PropTypes.string,
   posterURL: PropTypes.string,
-  favoriteList: PropTypes.array,
+  favoriteList: PropTypes.any,
   setFavoriteList: PropTypes.func,
 };
 

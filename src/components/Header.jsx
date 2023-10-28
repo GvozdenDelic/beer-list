@@ -101,7 +101,7 @@ function Header({ favoriteList }) {
         {state.loggedIn && `Hi, ${state.username} !`}
         {state.loggedIn && (
           <div className="favorites__icon">
-            🧡({favoriteList ? favoriteList : 0})
+            🧡({favoriteList ? favoriteList.length : 0})
           </div>
         )}
       </div>

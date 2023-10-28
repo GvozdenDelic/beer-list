@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <>
-      <Header favoriteList={favoriteList.length} />
+      <Header favoriteList={favoriteList} />
       <Beerlist
         beers={beers}
         setBeers={setBeers}

@@ -3,9 +3,12 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export default function NotFound() {
+  const favoriteList = localStorage.getItem("favoriteList")
+    ? JSON.parse(localStorage.getItem("favoriteList"))
+    : [];
   return (
     <>
-      <Header />
+      <Header favoriteList={favoriteList} />
       <div className="error-page">
         {" "}
         <h2>Oops! You seem to be lost.</h2>

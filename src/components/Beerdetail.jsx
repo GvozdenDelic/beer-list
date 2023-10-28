@@ -1,16 +1,18 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import Header from "./Header";
 import Loader from "./Loader";
 import Footer from "./Footer";
 import "./scss/beerdetail.scss";
 
-export default function Beerdetail({ favoriteList }) {
+export default function Beerdetail() {
   const beerId = useParams().beerId;
   const [detail, setDetail] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const favoriteList = localStorage.getItem("favoriteList")
+    ? JSON.parse(localStorage.getItem("favoriteList"))
+    : [];
 
   useEffect(() => {
     const getDetail = async () => {
@@ -68,7 +70,3 @@ export default function Beerdetail({ favoriteList }) {
     </>
   );
 }
-
-Beerdetail.propTypes = {
-  favoriteList: PropTypes.array,
-};

@@ -25,7 +25,7 @@
     }
     a {
       color: $mine-shaft;
-      border: 1px solid $silver;
+      @include border(1px, $silver);
       border-right: none;
       padding: $gutter-tiny $gutter-small;
       font-size: $font-small;

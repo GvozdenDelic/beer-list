@@ -82,8 +82,8 @@ img {
 input[type="text"] {
   padding: $gutter-tiny $gutter-small;
   border-radius: $border-radius;
-  border: 1px solid $silver;
   margin: 0 $gutter-tiny;
+  @include border(1px, $silver);
 }
 
 button[type="submit"] {
@@ -95,12 +95,12 @@ button[type="submit"] {
   cursor: pointer;
   color: $mine-shaft;
   background: $white;
-  border: 1px solid $silver;
   border-radius: $border-radius;
   padding: $gutter-tiny $gutter-small;
   font-size: $font-small;
   font-weight: bold;
   transition: all $transition-out;
+  @include border(1px, $silver);
 
   &:hover {
     color: $mine-shaft;

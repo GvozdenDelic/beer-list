@@ -2,15 +2,16 @@
   display: inline-flex;
   flex-wrap: wrap;
   position: relative;
-  flex: $flex-6;
   align-content: space-between;
   justify-content: center;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid $gallery;
   margin: $gutter-small;
   border-radius: $border-radius;
   box-shadow: $box-shadow $easy-black;
+
+  @include flex(6);
+  @include border(1px, $gallery);
 
   p,
   a {
@@ -33,7 +34,7 @@
       }
 
       .button {
-        background-color: #eee;
+        background-color: $gallery;
         transition: all $transition-in;
       }
     }
@@ -62,12 +63,12 @@
 
 @media only screen and (max-width: $tablet) {
   .beer-list__item {
-    flex: $flex-4;
+    @include flex(4);
   }
 }
 
 @media only screen and (max-width: $mobile) {
   .beer-list__item {
-    flex: $flex-2;
+    @include flex(2);
   }
 }

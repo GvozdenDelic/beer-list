@@ -20,7 +20,9 @@ export default function Beerlist({
       const json = await resp.json();
       setBeers(json);
     };
-    getData().then(setIsLoading(false));
+    getData()
+      .catch((error) => console.log(error))
+      .then(setIsLoading(false));
   }, [setBeers]);
 
   const itemsPerPage = 12;

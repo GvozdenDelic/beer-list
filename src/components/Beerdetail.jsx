@@ -20,7 +20,9 @@ export default function Beerdetail({ favoriteList }) {
       const beerDetail = await resp.json();
       setDetail(beerDetail[0]);
     };
-    getDetail().then(setIsLoading(false));
+    getDetail()
+      .catch((error) => console.log(error))
+      .then(setIsLoading(false));
   }, [beerId, setDetail]);
 
   return (

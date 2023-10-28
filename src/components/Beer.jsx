@@ -35,7 +35,7 @@ Beer.propTypes = {
   id: PropTypes.number,
   title: PropTypes.string,
   posterURL: PropTypes.string,
-  favoriteList: PropTypes.any,
+  favoriteList: PropTypes.array,
   setFavoriteList: PropTypes.func,
 };
 

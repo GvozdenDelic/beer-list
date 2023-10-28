@@ -75,6 +75,6 @@ export default function Beerlist({
 Beerlist.propTypes = {
   beers: PropTypes.array,
   setBeers: PropTypes.func,
-  favoriteList: PropTypes.any,
+  favoriteList: PropTypes.array,
   setFavoriteList: PropTypes.func,
 };

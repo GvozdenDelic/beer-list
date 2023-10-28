@@ -110,7 +110,7 @@ function Header({ favoriteList }) {
 }
 
 Header.propTypes = {
-  favoriteList: PropTypes.number,
+  favoriteList: PropTypes.array,
 };
 
 export default Header;

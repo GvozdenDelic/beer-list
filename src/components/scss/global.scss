@@ -127,6 +127,10 @@ button[type="submit"] {
   }
 }
 
+.error-page {
+  min-height: 100vh;
+}
+
 @media only screen and (max-width: $mobile) {
   h1 {
     font-size: $font-big;

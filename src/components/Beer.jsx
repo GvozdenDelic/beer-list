@@ -15,7 +15,7 @@ function Beer({ id, title, posterURL, favoriteList, setFavoriteList }) {
       <span className="favorite__icon" onClick={handleAddToFavorite}>
         {favoriteList.includes(id) ? "🧡" : "🤍"}
       </span>
-      <Link to={`/beer/${id}`}>
+      <Link to={`/beer/${id}`} preventScrollReset={false}>
         <img src={posterURL} alt={title} />
         <p>{title}</p>
         <div className="button">See more</div>

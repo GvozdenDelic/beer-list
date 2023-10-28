@@ -1,0 +1,37 @@
+@import "./vars.scss";
+
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  li {
+    &.selected a,
+    &:not(.disabled):hover a {
+      background-color: $gallery;
+    }
+
+    &.disabled a {
+      color: $black-disabled;
+    }
+
+    &:first-of-type a {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+    &:last-of-type a {
+      border-right: 1px solid $silver;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+    a {
+      color: $mine-shaft;
+      border: 1px solid $silver;
+      border-right: none;
+      padding: $gutter-tiny $gutter-small;
+      font-size: $font-small;
+      font-weight: bold;
+      transition: all $transition-out;
+      cursor: pointer;
+    }
+  }
+}

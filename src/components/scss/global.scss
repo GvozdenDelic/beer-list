@@ -1,0 +1,138 @@
+@import "./vars.scss";
+
+/* Global */
+:root {
+  font-family: $font-family;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $black;
+  background-color: $black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  max-width: $app-width;
+  margin: 0 auto;
+  background: $white;
+  text-align: center;
+}
+
+a {
+  font-weight: 500;
+  color: $cornflower-blue;
+  text-decoration: inherit;
+}
+a:hover {
+  color: $royal-blue;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  color: $mine-shaft;
+  background: url("../src/assets/images/london-pub.jpeg") no-repeat top center /
+    100% auto;
+}
+
+a {
+  color: $black;
+
+  &:hover {
+    color: $mine-shaft;
+  }
+}
+
+h1 {
+  background: $white;
+  margin: 0;
+  padding: $gutter 0;
+  text-transform: uppercase;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $black;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+img {
+  width: 100%;
+}
+
+input[type="text"] {
+  padding: $gutter-tiny $gutter-small;
+  border-radius: $border-radius;
+  border: 1px solid $silver;
+  margin: 0 $gutter-tiny;
+}
+
+button[type="submit"] {
+  background: $astronaut;
+  color: $white;
+}
+
+.button {
+  cursor: pointer;
+  color: $mine-shaft;
+  background: $white;
+  border: 1px solid $silver;
+  border-radius: $border-radius;
+  padding: $gutter-tiny $gutter-small;
+  font-size: $font-small;
+  font-weight: bold;
+  transition: all $transition-out;
+
+  &:hover {
+    color: $mine-shaft;
+    background-color: $gallery;
+    transition: all $transition-in;
+  }
+}
+
+.validation-error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: $red;
+  font-size: $font-small;
+  width: 100%;
+}
+
+.loading-animation {
+  opacity: 0;
+  transition: opacity 0.3s ease-out 0.2s;
+
+  &.loading-animation--loaded {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  h1 {
+    font-size: $font-big;
+  }
+
+  input[type="text"] {
+    width: $input-width-mobile;
+  }
+}

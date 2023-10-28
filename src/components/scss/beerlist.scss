@@ -1,14 +1,15 @@
-@import "./beer.css";
+@import "./vars.scss";
+@import "./beer.scss";
 
 .beer-list {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   min-height: 100vh;
-  background: #fff;
+  background: $white;
   box-sizing: border-box;
-  padding: 0 10px;
-  margin: 20px 0 30px;
+  padding: 0 $gutter-small;
+  margin: $gutter 0 $gutter-big;
 }
 
 @media only screen and (max-width: 768px) {

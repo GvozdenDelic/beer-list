@@ -1,0 +1,73 @@
+.beer-list__item {
+  display: inline-flex;
+  flex-wrap: wrap;
+  position: relative;
+  flex: $flex-6;
+  align-content: space-between;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid $gallery;
+  margin: $gutter-small;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow $easy-black;
+
+  p,
+  a {
+    width: 100%;
+  }
+
+  a {
+    height: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    padding: $gutter;
+    box-sizing: border-box;
+
+    &:hover {
+      img {
+        transform: $scaling;
+        transition: all 0.25s $jump-easing;
+      }
+
+      .button {
+        background-color: #eee;
+        transition: all $transition-in;
+      }
+    }
+  }
+
+  img {
+    max-height: $image-max;
+    object-fit: contain;
+    transition: all $transition-in;
+  }
+
+  .favorite__icon {
+    position: absolute;
+    top: $gutter-tiny;
+    right: $gutter-tiny;
+    font-size: $font-small;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all $transition-in;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .beer-list__item {
+    flex: $flex-4;
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .beer-list__item {
+    flex: $flex-2;
+  }
+}

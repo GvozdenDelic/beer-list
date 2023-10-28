@@ -1,0 +1,33 @@
+@import "./vars.scss";
+
+.site-header {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  z-index: 10;
+  padding: 0 $gutter;
+  text-align: left;
+  background: $white;
+  border-bottom: 1px solid $easy-black;
+
+  &__right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: $gutter 0;
+  }
+}
+
+.favorites__icon {
+  margin-left: $gutter-small;
+  font-size: $font-smallest;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: $mobile) {
+  .site-header {
+    padding: 0 $gutter-small;
+  }
+}

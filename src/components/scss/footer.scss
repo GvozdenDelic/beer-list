@@ -1,0 +1,12 @@
+@import "./vars.scss";
+
+footer {
+  padding: $gutter;
+  background: $mine-shaft;
+  color: $white;
+  margin-top: $gutter-big;
+
+  p {
+    margin: 0;
+  }
+}

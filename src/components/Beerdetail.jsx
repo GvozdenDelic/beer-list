@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Header from "./Header";
 import Loader from "./Loader";
 import Footer from "./Footer";
-import "./css/beerdetail.css";
+import "./scss/beerdetail.scss";
 
 export default function Beerdetail({ favoriteList }) {
   const beerId = useParams().beerId;

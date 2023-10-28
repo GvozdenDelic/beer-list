@@ -1,0 +1,45 @@
+@import "./vars.scss";
+
+.beer-list__item.beer-list__item--detail {
+  box-shadow: none;
+  border: none;
+  min-height: 100vh;
+
+  img {
+    max-height: $image-max-big;
+  }
+
+  a {
+    display: inline;
+    padding: 0;
+    height: auto;
+  }
+}
+
+.beer-list__item-details {
+  margin-left: $gutter;
+  max-width: 50%;
+  text-align: left;
+
+  h2 {
+    border-bottom: $gutter-tiny solid $mine-shaft;
+    margin: 0;
+  }
+
+  &__text,
+  &__stats {
+    margin-top: $gutter-big;
+  }
+
+  &__stats p {
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .beer-list__item--detail {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}

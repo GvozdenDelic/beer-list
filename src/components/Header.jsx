@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useReducer } from "react";
-import "./css/header.css";
+import "./scss/header.scss";
 
 function Header({ favoriteList }) {
   const initialState = {

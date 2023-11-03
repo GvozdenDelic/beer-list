@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Beer from "./Beer";
 import Loader from "./Loader";
 import ReactPaginate from "react-paginate";
+import ContentWrapper from "./ContentWrapper";
 import "./scss/beerlist.scss";
 import "./scss/pagination.scss";
 
@@ -22,7 +23,7 @@ export default function Beerlist({
     };
     getData()
       .catch((error) => console.log(error))
-      .then(setIsLoading(false));
+      .finally(setIsLoading(false));
   }, [setBeers]);
 
   const itemsPerPage = 12;
@@ -42,7 +43,7 @@ export default function Beerlist({
         <Loader />
       ) : (
         <>
-          <section className="beer-list">
+          <ContentWrapper>
             {currentBeers.map((beer) => {
               return (
                 <Beer
@@ -55,15 +56,15 @@ export default function Beerlist({
                 />
               );
             })}
-          </section>
+          </ContentWrapper>
           <ReactPaginate
             className="pagination"
             breakLabel="..."
-            nextLabel="next >"
+            nextLabel=">"
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
             pageCount={pageCount}
-            previousLabel="< previous"
+            previousLabel="<"
             renderOnZeroPageCount={null}
           />
         </>

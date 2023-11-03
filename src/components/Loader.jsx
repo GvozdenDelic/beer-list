@@ -1,7 +1,9 @@
+import ContentWrapper from "./ContentWrapper";
+
 export default function Loader() {
   return (
-    <section className="beer-list">
+    <ContentWrapper>
       <div>Loading...</div>
-    </section>
+    </ContentWrapper>
   );
 }

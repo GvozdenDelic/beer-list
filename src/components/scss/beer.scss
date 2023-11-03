@@ -33,6 +33,7 @@
         transition: all 0.25s $jump-easing;
       }
 
+      button,
       .button {
         background-color: $gallery;
         transition: all $transition-in;
@@ -53,10 +54,17 @@
     font-size: $font-small;
     cursor: pointer;
     opacity: 0.6;
-    transition: all $transition-in;
+    transform-origin: center center;
+    transition: none;
 
     &:hover {
       opacity: 1;
+      transition: all $transition-in;
+    }
+
+    &:active {
+      transform: $scalin-huge;
+      transition: all $transition-in;
     }
   }
 }

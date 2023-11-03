@@ -25,7 +25,7 @@ function Beer({ id, title, posterURL, favoriteList, setFavoriteList }) {
       <Link to={`/beer/${id}`} preventScrollReset={false}>
         <img src={posterURL} alt={title} />
         <p>{title}</p>
-        <div className="button">See more</div>
+        <button className="button">See more</button>
       </Link>
     </div>
   );

@@ -1,4 +1,4 @@
-/* Responsive */
+/* Breakpoints */
 $tablet: 1024px;
 $mobile: 768px;
 
@@ -8,8 +8,6 @@ $gutter-big: 40px;
 $gutter: 20px;
 $gutter-small: 10px;
 $gutter-tiny: 5px;
-$image-max: 300px;
-$image-max-big: 600px;
 
 /* Colors */
 $black: #000;
@@ -25,7 +23,7 @@ $astronaut: #284a7c;
 $red: #f00;
 
 /* Fonts */
-$font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+$font-family: Georgia, Times, "Times New Roman";
 $font-big: 17px;
 $font-small: 12px;
 $font-smallest: 10px;
@@ -34,12 +32,15 @@ $font-smallest: 10px;
 $transition-in: ease-in-out 0.2s;
 $transition-out: ease-in-out 0.05s;
 $scaling: scale(1.05);
+$scalin-huge: scale(1.05);
 $jump-easing: cubic-bezier(0, -0.49, 0.61, 1.92);
 
 /* Styles */
 $border-radius: 5px;
 $input-width-mobile: 100px;
 $box-shadow: 2px 4px 5px;
+$image-max: 300px;
+$image-max-big: 600px;
 
 /* Mixins */
 @mixin border($width, $color) {

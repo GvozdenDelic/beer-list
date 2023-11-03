@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useReducer } from "react";
+import Validation from "./Validation";
 import "./scss/header.scss";
 
 function Header({ favoriteList }) {
@@ -71,7 +72,7 @@ function Header({ favoriteList }) {
         <Link to={`/`}>🍺 Beer list</Link>
       </h1>
 
-      <div className="site-header__right">
+      <div className="site-header__features">
         {state.loggingIn && (
           <>
             <input
@@ -87,7 +88,7 @@ function Header({ favoriteList }) {
             </button>
 
             {state.validationError !== "" && (
-              <div className="validation-error">{state.validationError}</div>
+              <Validation type="error" message={state.validationError} />
             )}
           </>
         )}
@@ -100,9 +101,9 @@ function Header({ favoriteList }) {
 
         {state.loggedIn && `Hi, ${state.username} !`}
         {state.loggedIn && (
-          <div className="favorites__icon">
+          <span className="favorites__icon">
             🧡({favoriteList ? favoriteList.length : 0})
-          </div>
+          </span>
         )}
       </div>
     </header>

@@ -24,7 +24,7 @@ export default function Beerdetail() {
     };
     getDetail()
       .catch((error) => console.log(error))
-      .then(setIsLoading(false));
+      .finally(setIsLoading(false));
   }, [beerId, setDetail]);
 
   return (
@@ -46,10 +46,10 @@ export default function Beerdetail() {
               <Link to={`/`}>Beer list</Link> / {detail.tagline}
             </small>
             <h2>{detail.name}</h2>
-            <div className="beer-list__item-details__text">
+            <section className="beer-list__item-details__text">
               {detail.description}
-            </div>
-            <div className="beer-list__item-details__stats">
+            </section>
+            <section className="beer-list__item-details__stats">
               <ul>
                 <li>
                   <strong>Ibu:</strong> {detail.ibu} <strong>Ph:</strong>{" "}
@@ -62,7 +62,7 @@ export default function Beerdetail() {
                   <i>-- contributed by {detail.contributed_by}</i>
                 </li>
               </ul>
-            </div>
+            </section>
           </div>
         </div>
       )}

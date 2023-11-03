@@ -1,0 +1,16 @@
+$path: "../src/assets/fonts/";
+
+@font-face {
+  font-family: "Big Bloke BB";
+  src: url($path + "BigBlokeBB.eot");
+  src: url($path + "BigBlokeBB.eot?#iefix") format("embedded-opentype"),
+    url($path + "BigBlokeBB.woff2") format("woff2"),
+    url($path + "BigBlokeBB.woff") format("woff"),
+    url($path + "BigBlokeBB.ttf") format("ttf"),
+    url($path + "BigBlokeBB.svg#BigBlokeBB") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+$heading-font: "Big Bloke BB";

@@ -4,6 +4,7 @@ import Beer from "./Beer";
 import Loader from "./Loader";
 import ReactPaginate from "react-paginate";
 import ContentWrapper from "./ContentWrapper";
+import GvozdenSlider from "./GvozdenSlider";
 import "./scss/beerlist.scss";
 import "./scss/pagination.scss";
 
@@ -23,7 +24,11 @@ export default function Beerlist({
     };
     getData()
       .catch((error) => console.log(error))
-      .finally(setIsLoading(false));
+      .finally(
+        (window.onload = () => {
+          setIsLoading(false);
+        })
+      );
   }, [setBeers]);
 
   const itemsPerPage = 12;
@@ -43,6 +48,7 @@ export default function Beerlist({
         <Loader />
       ) : (
         <>
+          <GvozdenSlider />
           <ContentWrapper>
             {currentBeers.map((beer) => {
               return (
@@ -60,11 +66,11 @@ export default function Beerlist({
           <ReactPaginate
             className="pagination"
             breakLabel="..."
-            nextLabel=">"
+            nextLabel="&rarr;"
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
             pageCount={pageCount}
-            previousLabel="<"
+            previousLabel="&larr;"
             renderOnZeroPageCount={null}
           />
         </>

@@ -23,9 +23,8 @@ function Beer({ id, title, posterURL, favoriteList, setFavoriteList }) {
         {favoriteList.includes(id) ? "🧡" : "🤍"}
       </span>
       <Link to={`/beer/${id}`} preventScrollReset={false}>
-        <img src={posterURL} alt={title} />
+        <img src={posterURL} alt={title.split(" ")[0] + " image"} />
         <p>{title}</p>
-        <button className="button">See more</button>
       </Link>
     </div>
   );

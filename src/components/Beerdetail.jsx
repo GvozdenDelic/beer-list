@@ -24,7 +24,11 @@ export default function Beerdetail() {
     };
     getDetail()
       .catch((error) => console.log(error))
-      .finally(setIsLoading(false));
+      .finally(
+        (window.onload = () => {
+          setIsLoading(false);
+        })
+      );
   }, [beerId, setDetail]);
 
   return (

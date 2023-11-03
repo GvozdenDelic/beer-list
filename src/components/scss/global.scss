@@ -23,6 +23,7 @@
   margin: 0 auto;
   background: $white;
   text-align: center;
+  box-shadow: 0 0 2000px 2000px rgba($black, 0.75);
 }
 
 a {
@@ -39,7 +40,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 20rem;
   min-height: 100vh;
   color: $mine-shaft;
   background: url("../src/assets/images/london-pub.jpeg") no-repeat fixed top
@@ -97,6 +98,7 @@ button[type="submit"] {
 
 button,
 .button {
+  font-family: $font-family;
   cursor: pointer;
   color: $mine-shaft;
   background: $white;
@@ -140,6 +142,7 @@ button,
 
 .error-page {
   min-height: 100vh;
+  width: 100%;
 }
 
 @media only screen and (max-width: $mobile) {

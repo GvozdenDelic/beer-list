@@ -13,6 +13,10 @@
   @include flex(6);
   @include border(1px, $gallery);
 
+  p {
+    margin-bottom: 0;
+  }
+
   p,
   a {
     width: 100%;

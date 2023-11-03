@@ -11,6 +11,7 @@
     }
 
     &.disabled a {
+      cursor: not-allowed;
       color: $black-disabled;
     }
 

@@ -4,8 +4,8 @@
 .beer-list {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   width: 100%;
-  min-height: 100vh;
   background: $white;
   box-sizing: border-box;
   padding: 0 $gutter-small;

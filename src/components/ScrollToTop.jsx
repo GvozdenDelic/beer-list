@@ -6,7 +6,8 @@ ScrollToTop.propTypes = {
   children: PropTypes.object,
 };
 
-function ScrollToTop() {
+// This is used to make sure that scroll is set to "0" when opening the detail page
+export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -15,5 +16,3 @@ function ScrollToTop() {
 
   return null;
 }
-
-export default ScrollToTop;

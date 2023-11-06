@@ -18,7 +18,7 @@ export default function Beerlist({
 
   useEffect(() => {
     const getData = async () => {
-      const resp = await fetch("https://api.punkapi.com/v2/beers?per_page=24");
+      const resp = await fetch("http://localhost:8000/beers");
       const json = await resp.json();
       setBeers(json);
     };
@@ -50,6 +50,7 @@ export default function Beerlist({
         <>
           <GvozdenSlider />
           <ContentWrapper>
+            <h1>Beer List</h1>
             {currentBeers.map((beer) => {
               return (
                 <Beer

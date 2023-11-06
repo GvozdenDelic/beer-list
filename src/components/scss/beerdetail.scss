@@ -9,6 +9,8 @@
 
   img {
     max-height: $image-max-big;
+    position: sticky;
+    top: 4rem;
   }
 
   a {
@@ -19,11 +21,12 @@
 }
 
 .beer-list__item-details {
-  margin-left: $gutter;
+  padding-left: $gutter;
+  padding-right: $gutter-small;
   max-width: 50%;
   text-align: left;
 
-  h2 {
+  h1 {
     font-size: $font-huge;
     border-bottom: $gutter-tiny solid $mine-shaft;
     margin: 0;
@@ -52,9 +55,21 @@
     margin: 0;
 
     img {
-      position: sticky;
-      top: 6.25rem;
       max-height: $image-max;
+    }
+  }
+
+  .beer-list__item-details {
+    padding-left: $gutter-small;
+
+    h1 {
+      font-size: $font-large;
+      padding-bottom: 0;
+    }
+
+    &__text,
+    &__stats {
+      margin-top: $gutter;
     }
   }
 }

@@ -12,6 +12,19 @@
   background: $white;
   border-bottom: 1px solid $easy-black;
 
+  .username {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .logo {
+    width: auto;
+    &--small {
+      display: none;
+    }
+  }
+
   &__features {
     position: relative;
     display: flex;
@@ -21,13 +34,39 @@
 }
 
 .favorites__icon {
-  margin-left: $gutter-small;
+  margin: 0 $gutter-small;
   font-size: $font-smallest;
   font-weight: bold;
 }
 
 @media only screen and (max-width: $mobile) {
   .site-header {
-    padding: 0 $gutter-small;
+    padding: $gutter-small;
+
+    .logo {
+      &--small {
+        display: block;
+        width: auto;
+      }
+
+      &--big {
+        display: none;
+      }
+    }
+
+    .username {
+      width: 150px;
+      background: $white;
+      position: absolute;
+      left: 0;
+      @include fadeout(3s);
+    }
+
+    &__features {
+      position: absolute;
+      right: $gutter-small;
+      width: calc(100% - $gutter);
+      justify-content: flex-end;
+    }
   }
 }

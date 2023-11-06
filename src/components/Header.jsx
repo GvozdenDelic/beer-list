@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { useReducer } from "react";
 import Validation from "./Validation";
+import Logo from "/images/beer-list-logo.webp";
+import LogoSmall from "/images/beer-list-logo--small.webp";
 import "./scss/header.scss";
 
-function Header({ favoriteList }) {
+export default function Header({ favoriteList }) {
   const initialState = {
     username: "",
     loggingIn: false,
@@ -37,6 +38,13 @@ function Header({ favoriteList }) {
           loggedIn: true,
         };
       }
+      case "logout": {
+        return {
+          ...state,
+          username: "",
+          loggedIn: false,
+        };
+      }
       case "validation_error": {
         return {
           ...state,
@@ -55,6 +63,10 @@ function Header({ favoriteList }) {
     dispatch({ type: "change_name", payload: e.target.value });
   }
 
+  function handleLogOut() {
+    dispatch({ type: "logout" });
+  }
+
   function handleLogin(username) {
     if (username.length > 2) {
       dispatch({ type: "loggedin", username });
@@ -68,9 +80,8 @@ function Header({ favoriteList }) {
 
   return (
     <header className="site-header">
-      <h1>
-        <Link to={`/`}>🍺 Beer list</Link>
-      </h1>
+      <img className="logo logo--big" src={Logo} alt="Beer List logo" />
+      <img className="logo logo--small" src={LogoSmall} alt="Beer List logo" />
 
       <div className="site-header__features">
         {state.loggingIn && (
@@ -99,11 +110,18 @@ function Header({ favoriteList }) {
           </button>
         )}
 
-        {state.loggedIn && `Hi, ${state.username} !`}
         {state.loggedIn && (
-          <span className="favorites__icon">
-            🧡({favoriteList ? favoriteList.length : 0})
-          </span>
+          <span className="username">Hi, {state.username} !</span>
+        )}
+        {state.loggedIn && (
+          <>
+            <span className="favorites__icon">
+              🧡({favoriteList ? favoriteList.length : 0})
+            </span>
+            <button className="button" onClick={handleLogOut}>
+              Log out
+            </button>
+          </>
         )}
       </div>
     </header>
@@ -113,5 +131,3 @@ function Header({ favoriteList }) {
 Header.propTypes = {
   favoriteList: PropTypes.array,
 };
-
-export default Header;

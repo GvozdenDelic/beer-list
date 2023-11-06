@@ -116,6 +116,7 @@
     padding: $gutter-small;
 
     &__indicator {
+      padding: 0;
       bottom: $gutter-small;
     }
 
@@ -123,8 +124,18 @@
       height: $image-max;
     }
 
-    &__indicator {
-      padding: 0;
+    &__prev-button {
+      left: $gutter-small;
+    }
+
+    &__next-button {
+      right: $gutter-small;
+    }
+
+    &__prev-button,
+    &__next-button {
+      padding: 3px $gutter-small $gutter-tiny;
+      font-size: $font-big;
     }
   }
 }

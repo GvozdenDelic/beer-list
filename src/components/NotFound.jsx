@@ -25,7 +25,7 @@ export default function NotFound() {
       ) : (
         <div className="error-page">
           {" "}
-          <h2>Oops! You seem to be lost.</h2>
+          <h1>Oops! You seem to be lost.</h1>
           <Link to="/" className="button">
             Show me the beers
           </Link>

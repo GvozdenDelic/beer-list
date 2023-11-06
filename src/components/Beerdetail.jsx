@@ -16,9 +16,7 @@ export default function Beerdetail() {
 
   useEffect(() => {
     const getDetail = async () => {
-      const resp = await fetch(
-        `https://api.punkapi.com/v2/beers?ids=${beerId}`
-      );
+      const resp = await fetch(`http://localhost:8000/beers?id=${beerId}`);
       const beerDetail = await resp.json();
       setDetail(beerDetail[0]);
     };
@@ -49,7 +47,7 @@ export default function Beerdetail() {
             <small>
               <Link to={`/`}>Beer list</Link> / {detail.tagline}
             </small>
-            <h2>{detail.name}</h2>
+            <h1>{detail.name}</h1>
             <section className="beer-list__item-details__text">
               {detail.description}
             </section>

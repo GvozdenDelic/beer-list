@@ -1,20 +1,45 @@
 /* GvozdenSlider is a custom slider made for this project */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./scss/gvozdenslider.scss";
-
-// Import all images from "slider" folder
-let slides = import.meta.glob(
-  "/src/assets/images/slider/*.{png,jpg,jpeg,PNG,JPEG}",
-  {
-    eager: true,
-    as: "url",
-  }
-);
-
-slides = Object.keys(slides).map((key) => [key, slides[key]]);
+import { slide1, slide2, slide3, slide4 } from "/public/images/slider/index";
+import {
+  slide1mobile,
+  slide2mobile,
+  slide3mobile,
+  slide4mobile,
+} from "/public/images/slider/mobile/index";
+import {
+  slide1tablet,
+  slide2tablet,
+  slide3tablet,
+  slide4tablet,
+} from "/public/images/slider/tablet/index";
 
 export default function GvozdenSlider() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, [width]);
+
+  let slides = [];
+
+  // Check the device resolution to serve adequate images
+  if (width < 768) {
+    slides = [slide1mobile, slide2mobile, slide3mobile, slide4mobile];
+  } else if (width < 1024) {
+    slides = [slide1tablet, slide2tablet, slide3tablet, slide4tablet];
+  } else {
+    slides = [slide1, slide2, slide3, slide4];
+  }
+
   const [slideIndex, setSlideIndex] = useState(1);
   const sliderOptions = {
     speed: 0.7, // transition duration in seconds
@@ -68,6 +93,7 @@ export default function GvozdenSlider() {
 
   return (
     <div className="gvozden-slider">
+      <link rel="preload" as="image" href={slides[0]} type="image/webp"></link>
       <div
         className="gvozden-slider__inner-wrapper"
         style={{ transitionDuration: speed + "s" }}
@@ -75,7 +101,7 @@ export default function GvozdenSlider() {
         {slides.map((slide, index) => {
           return (
             <div key={index} className={handleSlideClasses(index)}>
-              <img src={slide[0]} alt={"Beer slide " + (index + 1)} />
+              <img src={slide} alt={"Beer slide " + (index + 1)} />
             </div>
           );
         })}

@@ -15,16 +15,16 @@ Features:
 - Loader (best seen when throttling is enabled in dev tools)
 - 404 page
 
-Ideas for new features:
-
-- Localisation
-- New slider options
--
-
 Running instructions:
 
-- open terminal and run "npm i"
+- Open terminal and run "npm i"
 - Then run "npm i -g json-server". If it requires a special permission, run "sudo npm i -g json-server" and enter the system password.
 - Then start the mock server by running: "json-server --watch data.json --port 8000".
 - Then run "npm run build"
-- then run "npm run preview" and open the URL that is shown in the terminal (eg. http://localhost:4173/)
+- Then run "npm run preview" and open the URL that is shown in the terminal (eg. http://localhost:4173/)
+
+Ideas for new features:
+
+- Localisation
+- Sorting beer list by name, id, ph level or other attributes
+- New slider options

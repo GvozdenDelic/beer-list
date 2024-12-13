@@ -5,7 +5,7 @@ It lists 24 beers using a mock JSON server
 
 Features:
 
-- User login/logout via useReducer. Redux could be implemented instead, but I didn't think it is needed for this simple logic.
+- User login/logout via useReducer.
 - Adding a beer to favorite list on the listing page and displaying favorites count in the header if user is logged in
 - Simple validation that checks if the user has entered at least 3 characters
 - Pagination using React pagination hook

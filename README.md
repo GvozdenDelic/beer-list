@@ -10,6 +10,7 @@ For pagination I have used a pagination React hook. For login I have used a redu
 I have used a localStorage to remember the favourite list after the refresh or in a new session. In a real-life scenario, I would have stored it in the database such as Supabase or MongoDB.
 
 For styling, I have decided to keep it simple: I used SCSS modules with BEM approach. The app is responsive and has 100/100 performance score on Google Lighthouse.
+
 --
 
 Features:

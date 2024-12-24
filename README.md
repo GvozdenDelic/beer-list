@@ -1,10 +1,18 @@
 # Beer List
 
-This is a React.js practice project.
-It lists 24 beers using a mock JSON server
+Signing NDA makes it difficult to share previous work highlights. 
+That's why I created "Beer List" project - to showcase my React skills and solutions inspired by real projects.
+
+It's a simple app that contains PLP, PDP and 404 error page using React Router and mock data. 
+I have developed a custom slider from scratch, with infinite loop and transition timing option. It also has some common E-commerce features like login, pagination, adding products to favourite list.
+For pagination I have used a pagination React hook. For login I have used a reducer, but the logic could also be handled using Redux and slices.
+
+I have used a localStorage to remember the favourite list after the refresh or in a new session. In a real-life scenario, I would have stored it in the database such as Supabase or MongoDB.
+
+For styling, I have decided to keep it simple: I used SCSS modules with BEM approach. The app is responsive and has 100/100 performance score on Google Lighthouse.
+--
 
 Features:
-
 - User login/logout via useReducer.
 - Adding a beer to favorite list on the listing page and displaying favorites count in the header if user is logged in
 - Simple validation that checks if the user has entered at least 3 characters

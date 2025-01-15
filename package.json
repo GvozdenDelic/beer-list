@@ -3,7 +3,7 @@
   "private": false,
   "version": "1.2.0",
   "type": "module",
-  "homepage": "https://gvozdendelic.github.io/beer-list/src",
+  "homepage": "https://gvozdendelic.github.io/beer-list",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

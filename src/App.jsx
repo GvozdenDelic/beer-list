@@ -6,7 +6,7 @@ import Beerdetail from "./components/Beerdetail";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/beer-list'>
       <ScrollToTop />
       <Routes>
         <Route index path="/" element={<Home />} />

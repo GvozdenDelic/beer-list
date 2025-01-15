@@ -1,9 +1,14 @@
+import PropTypes from "prop-types";
 import "./scss/footer.scss";
 
-export default function Footer() {
+export default function Footer({ children }) {
   return (
     <footer>
-      <p>Test project in React.js by Gvozden Delic</p>
+      <p>{children}</p>
     </footer>
   );
 }
+
+Footer.propTypes = {
+  children: PropTypes.string
+};

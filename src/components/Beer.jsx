@@ -42,7 +42,7 @@ export default function Beer({
 }
 
 Beer.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   title: PropTypes.string,
   posterURL: PropTypes.string,
   favoriteList: PropTypes.array,

@@ -31,7 +31,7 @@ export default function NotFound() {
           </Link>
         </div>
       )}
-      <Footer />
+      <Footer>Test project in React.js by Gvozden Delic</Footer>
     </>
   );
 }

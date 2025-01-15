@@ -20,7 +20,7 @@ export default function App() {
         favoriteList={favoriteList}
         setFavoriteList={setFavoriteList}
       />
-      <Footer />
+      <Footer>Test project in React.js by Gvozden Delic</Footer>
     </>
   );
 }

@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 import { useReducer } from "react";
 import Validation from "./Validation";
-import Logo from "/images/beer-list-logo.webp";
-import LogoSmall from "/images/beer-list-logo--small.webp";
+import Logo from "./Logo";
+import Button from "./Button";
+import logoBig from "/images/beer-list-logo.webp";
+import logoSmall from "/images/beer-list-logo--small.webp";
 import "./scss/header.scss";
 
 export default function Header({ favoriteList }) {
@@ -80,8 +82,7 @@ export default function Header({ favoriteList }) {
 
   return (
     <header className="site-header">
-      <img className="logo logo--big" src={Logo} alt="Beer List logo" />
-      <img className="logo logo--small" src={LogoSmall} alt="Beer List logo" />
+      <Logo logoBig={logoBig} logoSmall={logoSmall} />
 
       <div className="site-header__features">
         {state.loggingIn && (
@@ -91,12 +92,7 @@ export default function Header({ favoriteList }) {
               type="text"
               onChange={(e) => handleChangeName(e)}
             />
-            <button
-              className="button"
-              onClick={() => handleLogin(state.username)}
-            >
-              Log in
-            </button>
+            <Button onClickFunction={() => handleLogin(state.username)}>Log in</Button>
 
             {state.validationError !== "" && (
               <Validation type="error" message={state.validationError} />
@@ -105,22 +101,16 @@ export default function Header({ favoriteList }) {
         )}
 
         {!state.loggingIn && !state.loggedIn && (
-          <button className="button" onClick={handleLogging}>
-            Log in
-          </button>
+          <Button onClickFunction={handleLogging}>Log in</Button>
         )}
 
         {state.loggedIn && (
-          <span className="username">Hi, {state.username} !</span>
-        )}
-        {state.loggedIn && (
           <>
+            <span className="username">Hi, {state.username} !</span>
             <span className="favorites__icon">
               🧡({favoriteList ? favoriteList.length : 0})
             </span>
-            <button className="button" onClick={handleLogOut}>
-              Log out
-            </button>
+            <Button onClickFunction={handleLogOut}>Log out</Button>
           </>
         )}
       </div>

@@ -1,6 +1,7 @@
 /* GvozdenSlider is a custom slider made for this project */
 
 import { useState, useEffect } from "react";
+import Button from "./Button";
 import "./scss/gvozdenslider.scss";
 import { slide1, slide2, slide3, slide4 } from "/public/images/slider/index";
 import {
@@ -108,12 +109,8 @@ export default function GvozdenSlider() {
       </div>
       {buttons && (
         <>
-          <button className="gvozden-slider__prev-button" onClick={prevSlide}>
-            &larr;
-          </button>
-          <button className="gvozden-slider__next-button" onClick={nextSlide}>
-            &rarr;
-          </button>
+          <Button onClickFunction={prevSlide} buttonClass={"gvozden-slider__prev-button"}>&larr;</Button>
+          <Button onClickFunction={nextSlide} buttonClass={"gvozden-slider__next-button"}>&rarr;</Button>
         </>
       )}
       {slideIndicator && (

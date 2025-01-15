@@ -36,8 +36,7 @@ export default function Beerdetail() {
         <Loader />
       ) : (
         <div
-          className={`beer-list__item beer-list__item--detail loading-animation ${
-            !isLoading && "loading-animation--loaded"
+          className={`beer-list__item beer-list__item--detail loading-animation loading-animation--loaded"
           }`}
         >
           <aside>
@@ -68,7 +67,7 @@ export default function Beerdetail() {
           </div>
         </div>
       )}
-      <Footer />
+      <Footer>Test project in React.js by Gvozden Delic</Footer>
     </>
   );
 }

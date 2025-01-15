@@ -7,7 +7,7 @@ import { compression } from "vite-plugin-compression2";
 export default defineConfig({
   plugins: [react(), eslint(), compression()],
   build: {
-    outDir: '../dist'
+    outDir: '/dist'
   },
   base: "/beer-list",
 });
